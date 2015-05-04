@@ -4,6 +4,7 @@
  * Copyright (c) 2001 AGF Asset Management.
  */
 package net.codjo.agent;
+import org.apache.log4j.Logger;
 /**
  * Conteneur d'Agent.
  *
@@ -11,6 +12,8 @@ package net.codjo.agent;
  * attaché à un conteneur principal. </p>
  */
 public abstract class AgentContainer {
+    private static final Logger LOGGER = Logger.getLogger(AgentContainer.class);
+
     public static final int CONTAINER_PORT = 35700;
     private jade.wrapper.ContainerController jadeContainer;
 
@@ -51,9 +54,12 @@ public abstract class AgentContainer {
     public void stop() throws ContainerFailureException {
         assertJadeContainerIsStarted();
         try {
+            LOGGER.info("Stopping container ...");
             // UGLY : Petite pause pour éviter un arret trop rapide dans le cadre des tests
             Thread.sleep(50);
+            LOGGER.info("Killing jade container");
             jadeContainer.kill();
+            LOGGER.info("Jade container killed");
         }
         catch (Exception e) {
             throw new StopFailureException(new Exception(
