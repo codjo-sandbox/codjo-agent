@@ -13,7 +13,6 @@ public class DependencyTest extends PackageDependencyTestCase {
     public void test_dependency() throws Exception {
         Dependency dependency = createDependency();
         dependency.assertDependency("dependency.txt");
-        dependency.assertNoCycle();
     }
 
 

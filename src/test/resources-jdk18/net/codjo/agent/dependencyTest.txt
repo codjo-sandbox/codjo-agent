@@ -1,0 +1,48 @@
+net.codjo.agent
+	-> net.codjo.agent.test
+	-> net.codjo.test.common
+	-> net.codjo.test.common.matcher
+	-> jade.wrapper
+	-> jade.core
+	-> jade.core.behaviours
+	-> jade.domain.FIPAAgentManagement
+	-> jade.domain.JADEAgentManagement
+	-> jade.lang.acl
+	-> jade.security
+	-> jade.util.leap
+	-> jade.domain
+	-> org.picocontainer.defaults
+
+net.codjo.agent.behaviour
+	-> net.codjo.agent
+	-> net.codjo.agent.test
+	-> net.codjo.test.common
+	-> net.codjo.test.common.matcher
+	-> jade.core.behaviours
+
+net.codjo.agent.protocol
+	-> net.codjo.agent
+	-> net.codjo.agent.test
+	-> net.codjo.test.common
+
+net.codjo.agent.releaseTest
+	-> net.codjo.agent
+	-> net.codjo.agent.test
+
+net.codjo.agent.test
+    -> net.codjo.agent
+	-> net.codjo.agent.behaviour
+	-> net.codjo.agent.imtp
+	-> net.codjo.test.common
+	-> net.codjo.test.common.fixture
+	-> net.codjo.test.common.matcher
+	-> net.codjo.util.time
+	-> org.apache.commons.lang
+    -> jade.core
+	-> org.picocontainer
+	-> org.picocontainer.defaults
+
+net.codjo.agent.util
+	-> net.codjo.agent
+	-> net.codjo.agent.behaviour
+	-> net.codjo.agent.test
